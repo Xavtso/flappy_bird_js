@@ -58,3 +58,53 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5%;
 }
+
+.score,
+.best-score {
+  position: fixed;
+  z-index: 10;
+  height: 10vh;
+  font-size: 52px;
+  font-weight: 100;
+  /* color: white; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  top: 0;
+  left: 0;
+  margin: 10px;
+}
+
+.score_val,
+.best-score_val {
+  color: gold;
+  font-weight: bold;
+}
+
+.best-score,
+.best-score_val {
+  top: 5rem;
+  font-size: 42px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .message {
+    font-size: 50px;
+    top: 50%;
+    white-space: nowrap;
+  }
+  .score,
+  .best-score {
+    font-size: 8vh;
+  }
+  .potter {
+    width: 120px;
+    height: 90px;
+  }
+  .pipes {
+    width: 14vw;
+  }
+}
+
+.hidden {
+  display: none;
+}

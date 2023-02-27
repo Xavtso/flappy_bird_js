@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Potter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flappy Bird</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <div class="background"></div>
-    <img src="images/Bird.png" alt="invalid-img" class="bird" id="bird-1" />
-    <div class="message">
-        Space to Start Game <p><span style="color: red;">&uarr;</span> Space to Control</p>
+  <body>
+    <div class="background">
+      <img
+        src="/images/background-img.png"
+        alt="img error"
+        class="background"
+      />
     </div>
+    <img
+      src="images/potter 2.png "
+      alt="invalid-img"
+      class="potter"
+      id="potter-1"
+    />
+    <div class="message">Session📑 <br /><br />Space to start</div>
     <div class="score">
-        <span class="score_title"></span>
-        <span class="score_val"></span>
+      <span class="score_title"></span>
+      <span class="score_val"></span>
+    </div>
+
+    <div class="best-score">
+      <span class="best-score_title"></span>
+      <span class="best-score_val"></span>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

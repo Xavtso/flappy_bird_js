@@ -60,8 +60,56 @@ document.addEventListener("keydown", (e) => {
 //Call this function starts game
 function play() {
   function move() {
-    
+    if (game_state != "Play") return;
+    // selecting pipes created before
+    let pipes = document.querySelectorAll(".pipes");
+    pipes.forEach((element) => {
+      // getting pipes coords
+      let pipe_coords = element.getBoundingClientRect();
+      potter_coords = potter.getBoundingClientRect();
+
+      //   Removing pipes when they touch left border
+      if (pipe_coords.left <= 0) {
+        element.remove();
+        ////////
+      } else {
+        if (
+          potter_coords.left < pipe_coords.left + pipe_coords.width &&
+          potter_coords.left + potter_coords.width > pipe_coords.left &&
+          potter_coords.top < pipe_coords.top + pipe_coords.height &&
+          potter_coords.top + potter_coords.height > pipe_coords.top
+        ) {
+          game_state = "End";
+
+          message.innerHTML = `
+            <span style = "color: red;"> Перездача</span> <br><br> Відправляйтесь на Талон 
+            `;
+          message.classList.remove("hidden");
+          img.style.display = "none";
+          sound_die.play();
+
+          if (+score_val.innerHTML > +best_score_val.innerHTML) {
+            storage.setItem("best score", score_val.innerHTML);
+          }
+          return;
+        } else {
+          if (
+            pipe_coords.right < potter_coords.left &&
+            pipe_coords.right + move_speed >= potter_coords.left &&
+            element.increase_score == "1"
+          ) {
+            score_val.innerHTML = +score_val.innerHTML + 1;
+            move_speed += 0.1;
+            console.log(move_speed);
+            sound_point.play();
+          }
+          element.style.left = pipe_coords.left - move_speed + "px";
+        }
+      }
+    });
+    requestAnimationFrame(move);
   }
+  requestAnimationFrame(move);
 
   let potter_dy = 0;
   function apply_gravity() {

@@ -103,6 +103,7 @@ function play() {
             console.log(move_speed);
             sound_point.play();
           }
+          // Conditions for animation pipe movements
           element.style.left = pipe_coords.left - move_speed + "px";
         }
       }

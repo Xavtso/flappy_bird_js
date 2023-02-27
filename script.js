@@ -1,6 +1,6 @@
 // Initialization Variables and properties
 
-let move_speed = 3,
+let move_speed = 5,
   gravity = 0.3;
 const potter = document.querySelector(".potter");
 const img = document.getElementById("potter-1");

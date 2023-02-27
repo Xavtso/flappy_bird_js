@@ -99,6 +99,34 @@ function play() {
   let pipe_gap = 35;
 
   function create_pipe() {
-   
+    if (game_state != "Play") return;
+
+    if (pipe_seperation > 115) {
+      pipe_seperation = 0;
+
+      // Creating ceil pipes
+      let pipe_position = Math.floor(Math.random() * 43) + 8;
+      let pipe_ceil = document.createElement("div");
+      pipe_ceil.className = "pipes";
+      pipe_ceil.classList.add("pipe_ceil");
+      pipe_ceil.style.top = pipe_position - 70 + "vh";
+      pipe_ceil.style.left = "100vw";
+
+      document.body.appendChild(pipe_ceil);
+
+      // Creating floor pipes
+      let pipe_floor = document.createElement("div");
+      pipe_floor.className = "pipes";
+      pipe_floor.classList.add("pipe_floor");
+
+      pipe_floor.style.top = pipe_position + pipe_gap + "vh";
+      pipe_floor.style.left = "100vw";
+      pipe_floor.increase_score = "1";
+
+      document.body.appendChild(pipe_floor);
+    }
+    pipe_seperation++;
+    requestAnimationFrame(create_pipe);
   }
+  requestAnimationFrame(create_pipe);
 }

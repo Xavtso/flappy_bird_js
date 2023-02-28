@@ -50,6 +50,7 @@ document.addEventListener("keydown", (e) => {
     message.innerHTML = "";
     score_title.innerHTML = "Score: ";
     score_val.innerHTML = "0";
+    move_speed = 5;
     best_score_title.innerHTML = "Best Score: ";
     best_score_val.innerHTML = storage.getItem("best score");
     message.classList.add("hidden");

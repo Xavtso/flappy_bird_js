@@ -37,10 +37,10 @@
   /* object-fit: cover; */
 }
 .pipe_ceil {
-  background-image: url(/images/toppipe.png);
+  background-image: url(images/toppipe.png);
 }
 .pipe_floor {
-  background-image: url(/images/botpipe.png);
+  background-image: url(images/botpipe.png);
 }
 
 .message {

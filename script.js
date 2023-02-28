@@ -1,6 +1,6 @@
 // Initialization Variables and properties
 
-let move_speed = 3,
+let move_speed = 5,
   gravity = 0.3;
 const potter = document.querySelector(".potter");
 const img = document.getElementById("potter-1");
@@ -102,8 +102,7 @@ function play() {
             move_speed += 0.1;
             console.log(move_speed);
             sound_point.play();
-            }
-            // Conditions for animation pipe movements
+          }
           element.style.left = pipe_coords.left - move_speed + "px";
         }
       }

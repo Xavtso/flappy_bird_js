@@ -118,14 +118,14 @@ function play() {
     potter_dy = potter_dy + gravity;
     document.addEventListener("keydown", (e) => {
       if (e.keyCode == 32) {
-        img.src = "images/top.png";
+//         img.src = "images/top.png"; // Commented to get more perfomance
         potter_dy = -7;
       }
     });
 
     document.addEventListener("keyup", (e) => {
       if (e.keyCode == 32) {
-        img.src = "images/potter 2.png";
+//         img.src = "images/potter 2.png";
       }
     });
 
